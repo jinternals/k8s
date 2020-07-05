@@ -100,6 +100,12 @@
         - cp -i /etc/kubernetes/admin.conf /home/vagrant/.kube/config
         - chown vagrant:vagrant /home/vagrant/.kube/config
 
+    - name: Copy kubernetes config
+      fetch:
+        src: /home/vagrant/.kube/config
+        dest: ./config
+        flat: true
+
     - name: Install calico pod network
       become: false
       command: kubectl apply -f https://docs.projectcalico.org/v3.9/manifests/calico.yaml
