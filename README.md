@@ -2,7 +2,7 @@
 
 ### 1. setup kubernetes cluster
 ```shell script
-vagrant up
+  vagrant up
 ```
 ### 2. Setup KUBECONFIG
 ```shell script
@@ -10,5 +10,5 @@ vagrant up
 ```
 ### 3. destroy kubernetes cluster
 ```shell script
-vagrant destory
+  vagrant destory
 ```
