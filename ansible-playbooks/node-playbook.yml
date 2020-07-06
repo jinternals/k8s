@@ -96,6 +96,12 @@
     - name: Join the node to cluster
       command: sh /tmp/join-command.sh
 
+    - name: Create kubenetes kube config directory
+      file: path=/home/vagrant/.kube state=directory mode=0777
+
+    - name: Copy kubenetes config
+      copy: src=config dest=/home/vagrant/.kube/config mode=0777
+
   handlers:
     - name: docker status
       service: name=docker state=started
